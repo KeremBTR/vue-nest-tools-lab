@@ -7,7 +7,9 @@ node_modules
 # Build output
 dist
 dist-ssr
+build
 coverage
+.nyc_output
 
 # Logs
 logs
@@ -19,12 +21,23 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Local env / machine-specific files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 *.local
 
 # Editors / IDEs
 .vscode/*
 !.vscode/extensions.json
 .idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 *.suo
 *.ntvs*
 *.njsproj
@@ -35,5 +48,16 @@ lerna-debug.log*
 *.tsbuildinfo
 .eslintcache
 
+# Temp / runtime data
+.temp
+.tmp
+pids
+*.pid
+*.seed
+*.pid.lock
+
 # Vite
 *.timestamp-*-*.mjs
+
+# Node diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
