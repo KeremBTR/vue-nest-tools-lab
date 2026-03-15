@@ -1,3 +1,39 @@
+# OS
 .DS_Store
+
+# Dependencies
 node_modules
-.vscode
+
+# Build output
+dist
+dist-ssr
+coverage
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local env / machine-specific files
+*.local
+
+# Editors / IDEs
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript / tooling caches
+*.tsbuildinfo
+.eslintcache
+
+# Vite
+*.timestamp-*-*.mjs
