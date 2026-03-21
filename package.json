@@ -1,17 +1,29 @@
 {
   "name": "vue-nest-tools-lab",
   "private": true,
-"scripts": {
-  "lint:web": "pnpm --filter ./apps/web lint",
-  "lint:api": "pnpm --filter ./apps/api lint",
-  "lint": "pnpm lint:web && pnpm lint:api",
-
-  "lint:fix:web": "pnpm --filter ./apps/web lint:fix",
-  "lint:fix:api": "pnpm --filter ./apps/api lint:fix",
-  "lint:fix": "pnpm lint:fix:web && pnpm lint:fix:api",
-
-  "format:api": "pnpm --filter ./apps/api format",
-  "format": "pnpm format:api"
-},
-  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
+  "scripts": {
+    "lint:web": "pnpm --filter ./apps/web lint",
+    "lint:api": "pnpm --filter ./apps/api lint",
+    "lint": "pnpm lint:web && pnpm lint:api",
+    "lint:fix:web": "pnpm --filter ./apps/web lint:fix",
+    "lint:fix:api": "pnpm --filter ./apps/api lint:fix",
+    "lint:fix": "pnpm lint:fix:web && pnpm lint:fix:api",
+    "format:api": "pnpm --filter ./apps/api format",
+    "format": "pnpm format:api",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "apps/web/**/*.{js,ts,vue}": "pnpm --filter ./apps/web lint:fix",
+    "apps/api/**/*.ts": [
+      "pnpm --filter ./apps/api lint:fix",
+      "pnpm --filter ./apps/api format"
+    ]
+  },
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
+  "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0"
+  }
 }
