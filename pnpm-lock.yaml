@@ -114,6 +114,9 @@ importers:
       vue:
         specifier: ^3.5.29
         version: 3.5.30(typescript@5.9.3)
+      vue-router:
+        specifier: ^4.6.4
+        version: 4.6.4(vue@3.5.30(typescript@5.9.3))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^7.7.3
@@ -1772,6 +1775,9 @@ packages:
 
   '@vue/compiler-ssr@3.5.30':
     resolution: {integrity: sha512-NsYK6OMTnx109PSL2IAyf62JP6EUdk4Dmj6AkWcJGBvN0dQoMYtVekAmdqgTtWQgEJo+Okstbf/1p7qZr5H+bA==}
+
+  '@vue/devtools-api@6.6.4':
+    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
 
   '@vue/devtools-core@8.1.0':
     resolution: {integrity: sha512-LvD1VgDpoHmYL00IgKRLKktF6SsPAb0yaV8wB8q2jRwsAWvqhS8+vsMLEGKNs7uoKyymXhT92dhxgf/wir6YGQ==}
@@ -4632,6 +4638,11 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
 
+  vue-router@4.6.4:
+    resolution: {integrity: sha512-Hz9q5sa33Yhduglwz6g9skT8OBPii+4bFn88w6J+J4MfEo4KRRpmiNG/hHHkdbRFlLBOqxN8y8gf2Fb0MTUgVg==}
+    peerDependencies:
+      vue: ^3.5.0
+
   vue-tsc@3.2.5:
     resolution: {integrity: sha512-/htfTCMluQ+P2FISGAooul8kO4JMheOTCbCy4M6dYnYYjqLe3BExZudAua6MSIKSFYQtFOYAll7XobYwcpokGA==}
     hasBin: true
@@ -6527,6 +6538,8 @@ snapshots:
     dependencies:
       '@vue/compiler-dom': 3.5.30
       '@vue/shared': 3.5.30
+
+  '@vue/devtools-api@6.6.4': {}
 
   '@vue/devtools-core@8.1.0(vue@3.5.30(typescript@5.9.3))':
     dependencies:
@@ -9821,6 +9834,11 @@ snapshots:
       semver: 7.7.4
     transitivePeerDependencies:
       - supports-color
+
+  vue-router@4.6.4(vue@3.5.30(typescript@5.9.3)):
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      vue: 3.5.30(typescript@5.9.3)
 
   vue-tsc@3.2.5(typescript@5.9.3):
     dependencies:
