@@ -1,8 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>Hello App!</h1>
-  <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
+  <h1>Welcome to Vue Nest Labs Project!</h1>
   <nav>
     <RouterLink :to="{ name: 'home' }">
       Go to Home
