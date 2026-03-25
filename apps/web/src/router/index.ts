@@ -7,11 +7,11 @@ import PageNotFound from '../pages/PageNotFound.vue'
 import PageProfile from '../pages/PageProfile.vue'
 
 const routes = [
-  { path: '/', component: PageHome },
-  { path: '/login', component: PageLogin },
-  { path: '/profile/:id', component: PageProfile },
-  { path: '/directory', component: PageDirectory },
-  { path: '/:pathMatch(.*)*', component: PageNotFound },
+  { path: '/', name: 'home', component: PageHome },
+  { path: '/login', name: 'login', component: PageLogin },
+  { path: '/profile/:id', name: 'profile', component: PageProfile },
+  { path: '/directory', name: 'directory', component: PageDirectory },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: PageNotFound },
 ]
 
 export const router = createRouter({
