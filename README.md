@@ -32,3 +32,18 @@ It covers:
 Documentation:
 
 - [Lab 0 - Tooling](./docs/labs/00-tooling.md)
+
+### Lab 1 — Routing
+
+Lab 1 introduces frontend routing with Vue Router and sets up the first page-level navigation for the project.
+
+It covers:
+
+- Vue Router
+- route based navigation
+- route params
+- navigation links
+
+Documentation:
+
+- [Lab 1 - Routing](./docs/labs/01-routing.md)
