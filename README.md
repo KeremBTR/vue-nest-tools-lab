@@ -47,3 +47,20 @@ It covers:
 Documentation:
 
 - [Lab 1 - Routing](./docs/labs/01-routing.md)
+
+### Lab 2 — Query Basics
+
+Lab 2 introduces TanStack Query and uses it on the Directory page as the first server-state example in the frontend.
+
+It covers:
+
+- TanStack Query
+- VueQueryPlugin setup
+- useQuery
+- query keys
+- loading, error, and success states
+- basic caching behavior
+
+Documentation:
+
+- [Lab 2 - Query Basics](./docs/labs/02-query-basics.md)
