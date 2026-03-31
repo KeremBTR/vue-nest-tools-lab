@@ -1,14 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useQuery } from '@tanstack/vue-query'
+import { getProfiles } from '@/services/profiles'
+
+const { isPending, isError, data, error } = useQuery({
+  queryKey: ['profiles'],
+  queryFn: getProfiles,
+  retry: false,
+})
+</script>
 
 <template>
   <h1>This is the Directory Page</h1>
-  <RouterLink :to="`/profile/${123}`">
-    Go to Profile 123
-  </RouterLink>
-  <br>
-  <RouterLink :to="`/profile/${456}`">
-    Go to Profile 456
-  </RouterLink>
+
+  <span v-if="isPending">Loading...</span>
+  <span v-else-if="isError && error">Error: {{ error.message }}</span>
+  <ul v-else-if="data">
+    <li v-for="profile in data" :key="profile.id">
+      <RouterLink :to="`/profile/${profile.id}`">
+        Go to Profile ID:{{ profile.id }}
+      </RouterLink>
+    </li>
+  </ul>
 </template>
 
 <style scoped></style>
