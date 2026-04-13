@@ -4,6 +4,11 @@ export interface Profile {
   bio: string
 }
 
+export interface CreateProfileInput {
+  name: string
+  bio: string
+}
+
 const mockProfiles: Profile[] = [
   {
     id: '123',
@@ -31,4 +36,18 @@ export async function getProfiles(): Promise<Profile[]> {
   }
 
   return mockProfiles
+}
+
+export async function createProfile(input: CreateProfileInput): Promise<Profile> {
+  await delay(800)
+
+  const newProfile: Profile = {
+    id: crypto.randomUUID(),
+    name: input.name,
+    bio: input.bio,
+  }
+
+  mockProfiles.push(newProfile)
+
+  return newProfile
 }
