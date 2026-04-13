@@ -23,6 +23,7 @@ const mockProfiles: Profile[] = [
 ]
 
 const shouldFail = false
+const createFail = false
 
 function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -40,6 +41,10 @@ export async function getProfiles(): Promise<Profile[]> {
 
 export async function createProfile(input: CreateProfileInput): Promise<Profile> {
   await delay(800)
+
+  if (createFail) {
+    throw new Error('Failed to create profile.')
+  }
 
   const newProfile: Profile = {
     id: crypto.randomUUID(),

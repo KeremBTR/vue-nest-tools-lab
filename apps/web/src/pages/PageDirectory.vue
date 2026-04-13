@@ -14,7 +14,7 @@ const { isPending, isError, data, error } = useQuery({
   retry: false,
 })
 
-const { isPending: isCreating, mutate } = useMutation({
+const { isPending: isCreating, isError: isCreateError, error: createError, mutate } = useMutation({
   mutationFn: createProfile,
   retry: false,
   onSuccess: async () => {
@@ -48,6 +48,9 @@ function submitProfile() {
     <button type="submit" :disabled="isCreating">
       {{ isCreating ? 'Creating...' : 'Create profile' }}
     </button>
+    <p v-if="isCreateError && createError" :style="{ color: 'red' }">
+      {{ createError.message }}
+    </p>
   </form>
 
   <br>
