@@ -64,3 +64,19 @@ It covers:
 Documentation:
 
 - [Lab 2 - Query Basics](./docs/labs/02-query-basics.md)
+
+### Lab 3 — Mutations and Invalidation
+
+Lab 3 adds the first write operation to the frontend and connects it back to the cached query from Lab 2.
+
+It covers:
+
+- `createProfile()`
+- `useMutation`
+- mutation state
+- query invalidation
+- refreshing related query data after a successful write
+
+Documentation:
+
+- [Lab 3 - Mutations and Invalidation](./docs/labs/03-mutations-invalidation.md)
