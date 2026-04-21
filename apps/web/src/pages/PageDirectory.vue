@@ -2,8 +2,11 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/vue-query'
 import { ref } from 'vue'
 import { createProfile, getProfiles } from '@/services/profiles'
+import { useUiStore } from '@/stores/ui'
 
 const queryClient = useQueryClient()
+
+const uiStore = useUiStore()
 
 const name = ref('')
 const bio = ref('')
@@ -21,6 +24,8 @@ const { isPending: isCreating, isError: isCreateError, error: createError, mutat
     await queryClient.invalidateQueries({ queryKey: ['profiles'] })
     name.value = ''
     bio.value = ''
+    uiStore.closeCreateProfileModal()
+    uiStore.showToast('Profile created successfully.')
   },
 })
 
@@ -35,23 +40,32 @@ function submitProfile() {
 <template>
   <h1>This is the Directory Page</h1>
 
-  <h2>Create new profile</h2>
-  <form @submit.prevent="submitProfile">
-    <div>
-      <label for="name">Name </label>
-      <input id="name" v-model="name" type="text">
-    </div>
-    <div>
-      <label for="bio">Bio </label>
-      <input id="bio" v-model="bio" type="text">
-    </div>
-    <button type="submit" :disabled="isCreating">
-      {{ isCreating ? 'Creating...' : 'Create profile' }}
-    </button>
-    <p v-if="isCreateError && createError" :style="{ color: 'red' }">
-      {{ createError.message }}
-    </p>
-  </form>
+  <button type="button" @click="uiStore.openCreateProfileModal">
+    Create new profile
+  </button>
+
+  <section v-if="uiStore.isCreateProfileModalOpen">
+    <h2>Create new profile</h2>
+    <form @submit.prevent="submitProfile">
+      <div>
+        <label for="name">Name </label>
+        <input id="name" v-model="name" type="text">
+      </div>
+      <div>
+        <label for="bio">Bio </label>
+        <input id="bio" v-model="bio" type="text">
+      </div>
+      <button type="submit" :disabled="isCreating">
+        {{ isCreating ? 'Creating...' : 'Create profile' }}
+      </button>
+      <p v-if="isCreateError && createError" :style="{ color: 'red' }">
+        {{ createError.message }}
+      </p>
+      <button type="button" @click="uiStore.closeCreateProfileModal">
+        Cancel
+      </button>
+    </form>
+  </section>
 
   <br>
   <h2>Profiles List</h2>
