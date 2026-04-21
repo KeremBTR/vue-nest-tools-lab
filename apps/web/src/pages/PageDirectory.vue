@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useMutation, useQuery, useQueryClient } from '@tanstack/vue-query'
 import { ref } from 'vue'
+import AppToast from '@/components/AppToast.vue'
 import { createProfile, getProfiles } from '@/services/profiles'
 import { useUiStore } from '@/stores/ui'
 
@@ -40,9 +41,11 @@ function submitProfile() {
 <template>
   <h1>This is the Directory Page</h1>
 
-  <button type="button" @click="uiStore.openCreateProfileModal">
+  <button v-if="!uiStore.isCreateProfileModalOpen" type="button" @click="uiStore.openCreateProfileModal">
     Create new profile
   </button>
+
+  <AppToast />
 
   <section v-if="uiStore.isCreateProfileModalOpen">
     <h2>Create new profile</h2>
