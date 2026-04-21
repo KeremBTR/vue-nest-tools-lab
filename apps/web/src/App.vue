@@ -1,9 +1,4 @@
-<script setup lang="ts">
-import { useUiStore } from '@/stores/ui'
-
-// access the `store` variable anywhere in the component ✨
-const uiStore = useUiStore()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <h1>Welcome to Vue Nest Labs Project!</h1>
@@ -19,12 +14,6 @@ const uiStore = useUiStore()
     </RouterLink>
   </nav>
   <main>
-    <p v-if="uiStore.toastMessage">
-      {{ uiStore.toastMessage }}
-      <button type="button" @click="uiStore.clearToast">
-        Dismiss
-      </button>
-    </p>
     <RouterView />
   </main>
 </template>
