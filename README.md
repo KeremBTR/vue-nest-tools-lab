@@ -80,3 +80,20 @@ It covers:
 Documentation:
 
 - [Lab 3 - Mutations and Invalidation](./docs/labs/03-mutations-invalidation.md)
+
+### Lab 4 — Client State with Pinia
+
+Lab 4 introduces shared client-side UI state with Pinia and keeps it separate from the server-state flow already handled by TanStack Query.
+
+It covers:
+
+- Pinia setup
+- setup-style stores
+- shared UI state
+- create section visibility
+- toast state
+- the difference between local state, client state, and server state
+
+Documentation:
+
+- [Lab 4 - Client State with Pinia](./docs/labs/04-client-state-pinia.md)
