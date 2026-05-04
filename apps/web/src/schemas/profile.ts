@@ -1,7 +1,6 @@
-/* eslint-disable unused-imports/no-unused-vars */
 import * as z from 'zod'
 
-const createProfileSchema = z.object({
+export const createProfileSchema = z.object({
   name: z
     .string('Name must be a string')
     .trim()
