@@ -1,10 +1,7 @@
+import type { CreateProfileInput } from '@/schemas/profile'
+
 export interface Profile {
   id: string
-  name: string
-  bio: string
-}
-
-export interface CreateProfileInput {
   name: string
   bio: string
 }
