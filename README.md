@@ -97,3 +97,20 @@ It covers:
 Documentation:
 
 - [Lab 4 - Client State with Pinia](./docs/labs/04-client-state-pinia.md)
+
+### Lab 5 — Validation with Zod
+
+Lab 5 introduces runtime validation with Zod and adds field-level validation to the existing create profile flow.
+
+It covers:
+
+- Zod setup
+- profile validation schema
+- inferred TypeScript input type
+- runtime validation before mutation
+- field-level validation errors
+- the difference between TypeScript types and runtime validation
+
+Documentation:
+
+- [Lab 5 - Validation with Zod](./docs/labs/05-validation-zod.md)
